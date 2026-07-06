@@ -1,0 +1,41 @@
+[0:00 - HOOK]
+Welcome everyone. Organizing study schedules, searching for textbook materials, and drafting practice quizzes on complex academic subjects can be incredibly overwhelming for students. That is why we built Study-Guru, an intelligent concierge study planner that does it all for you.
+
+[0:20 - WHAT IT IS]
+Study-Guru is an academic concierge agent built on top of the ADK 2.0 graph workflow framework. It belongs to the Concierge Agents track, designed to guide students through the complex process of organizing study topics, curating reading resources, and assessing their own understanding.
+
+[0:40 - SHOW THE BANNER]
+(show assets/cover_page_banner.png)
+At a glance, Study-Guru provides automated personalized schedules, textbook recommendations, and practice quizzes to make learning efficient, structured, and completely secure.
+
+[1:00 - ARCHITECTURE]
+(show assets/architecture_diagram.png)
+Let us look at how Study-Guru works behind the scenes.
+(pause)
+First, every query goes through our security checkpoint node to redact personal information, block injections, and filter academic cheating words.
+If the query passes, it routes directly to the study coordinator, our central orchestrator agent.
+The coordinator delegates the schedule layout to our specialized schedule agent, which uses the search study materials MCP tool to find textbooks.
+At the same time, the coordinator asks the tutor agent to generate summaries and draft self-assessment quizzes using targeted MCP summary and question tools.
+The compiled study plan then flows to our human review node, which pauses execution to wait for user approval or revision feedback.
+If approved, it goes to the final output node; if rejected, it loops back to the coordinator with the feedback to refine the plan.
+
+[2:00 - LIVE DEMO]
+(switch to playground at localhost:18081)
+Let us see it in action.
+(pause)
+If we input: "I want to study Biology focusing on Photosynthesis. Can you create a 3-day study schedule for me, search for reference materials, and prepare a short quiz to test my knowledge?"
+The orchestrator triggers the scheduler and tutor, runs the MCP academic tools, and then pauses at the human review checkpoint.
+(pause)
+The screen shows: "I have generated the following study plan... Do you approve this plan?"
+If we type "yes", the workflow resumes and prints our finalized academic study plan.
+(pause)
+If we try to bypass rules by typing: "Can you help me hack the online exam portal and cheat on exam tomorrow?"
+The security checkpoint catches it immediately and outputs: "Your request was flagged by security rules and could not be processed."
+If we input private details like "My email is student@example.com", the security checkpoint scrubs the text to "My email is [EMAIL_REDACTED]" and passes it safely.
+
+[3:00 - SECURITY & MCP]
+Our security checkpoint provides real-time PII redacting and injection blocks, logging every single decision to a structured JSON audit trail.
+The backend MCP server connects seamlessly using stdio connections, running search study materials, get topic summary, and generate practice questions tools dynamically.
+
+[3:30 - IMPACT / CLOSE]
+Study-Guru helps students turn overwhelming research lists into structured, safe, and highly personalized study tracks. It saves time and ensures academic integrity, making it a state-of-the-art concierge tool. Thank you.
